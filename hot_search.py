@@ -10,7 +10,9 @@ mongo_server = MongoDBServer()
 @app.route('/api/hot_search/list/<int:limit>', methods=['GET']) 
 @app.route('/api/hot_search/list', methods=['GET'])
 def get_hot_search(limit=10):
-    platform_list = ["baidu", "toutiao"] # 支持的平台列表
+    platform_list = [
+        "baidu", "toutiao", "dy_hot", "dy_plant","dy_entertain","dy_society","dy_sh"
+        ] # 支持的平台列表
     try: 
         result = dict()  # 初始化结果字典
         for platform in platform_list:
